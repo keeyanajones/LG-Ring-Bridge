@@ -2,6 +2,7 @@
 A modular middleware utility designed to bridge the gap between the Amazon/Ring security ecosystem and native LG WebOS smart televisions. This service listens for Ring hardware events (motion alerts and doorbell rings) and pushes real-time, lightweight toast notifications directly to an LG TV screen using native system webhooks.
 
 ## 📐 System Architecture & Logic Flow
+```
 +----------------+      Webhook / SSE      +--------------------+      Native SIP / HTTP      +---------------+
 |  Ring Device   | ======================> |    Bridge Engine   | ==========================> |   LG WebOS    |
 | (Motion/Press) |                         | (Node.js / Python) |                             | (TV Display)  |
@@ -11,7 +12,7 @@ A modular middleware utility designed to bridge the gap between the Amazon/Ring 
 +--------------------+
 | Local Config / Env |
 +--------------------+
-
+```
 
 The bridge operates as a lightweight network daemon:
 1. **Event Ingestion:** Subscribes to the Ring API stream via long-polling or an incoming webhook router.
